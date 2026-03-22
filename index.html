@@ -50,6 +50,72 @@
             font-weight: bold;
         }
         .btn:hover { background-color: #2ea043; }
+  .slider-container {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+        }
+
+  /* Ukrywamy kropki radio */
+        input[name="slider"] {
+            display: none;
+        }
+
+        .slides {
+            display: flex;
+            width: 400%; /* 4 zdjęcia po 100% każde */
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .slide {
+            width: 25%; /* 1/4 z 400% to dokładnie szerokość kontenera */
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+  /* Logika przesuwania - najfajniejsza część */
+  #s1:checked ~ .slides { transform: translateX(0%); }
+  #s2:checked ~ .slides { transform: translateX(-25%); }
+  #s3:checked ~ .slides { transform: translateX(-50%); }
+  #s4:checked ~ .slides { transform: translateX(-75%); }
+
+  /* Wygląd strzałek / kropek na dole */
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls label {
+            width: 15px;
+            height: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #000;
+        }
+
+  /* Podświetlenie aktywnej "kropki" */
+  #s1:checked ~ .controls .to-s1,
+  #s2:checked ~ .controls .to-s2,
+  #s3:checked ~ .controls .to-s3,
+  #s4:checked ~ .controls .to-s4 {
+    background: #fff;
+  }
+
+
+        
     </style>
 </head>
 <body>
@@ -66,9 +132,25 @@
        <div class="status-card">
             <h3>🚀 Active Project: RX-93 Nu Gundam</h3>
     
-            <img src="" 
+           <div class="slides">
+    <div class="slide s1">  <img src="https://www.gundampros.shop/wp-content/uploads/2023/11/11-Entry-Grade-Rx-93-Nu-Gundam-2.png" 
          alt="Nu Gundam" 
-         style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;">
+         style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;"></div>
+    <div class="slide s2">  <img src="https://www.gundampros.shop/wp-content/uploads/2023/11/11-Entry-Grade-Rx-93-Nu-Gundam-4.png"
+         alt="Nu Gundam" 
+         style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;"></div>
+    <div class="slide s3">  <img src="https://www.gundampros.shop/wp-content/uploads/2023/11/11-Entry-Grade-Rx-93-Nu-Gundam-3.png" 
+         alt="Nu Gundam" 
+         style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;"></div>
+
+  </div>
+
+  <div class="controls">
+    <label for="s1" class="to-s1"></label>
+    <label for="s2" class="to-s2"></label>
+    <label for="s3" class="to-s3"></label>
+
+  </div>
 
             <p>Grade: Entry Grade | Status: <strong>Assemble</strong></p>
     
