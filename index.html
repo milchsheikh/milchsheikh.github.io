@@ -83,10 +83,11 @@
 
   /* Logika przesuwania - najfajniejsza część */
   #s1:checked ~ .slides { transform: translateX(0%); }
-  #s2:checked ~ .slides { transform: translateX(-25%); }
-  #s3:checked ~ .slides { transform: translateX(-50%); }
-  #s4:checked ~ .slides { transform: translateX(-75%); }
-
+  #s2:checked ~ .slides { transform: translateX(-20%); }
+  #s3:checked ~ .slides { transform: translateX(-40%); }
+  #s4:checked ~ .slides { transform: translateX(-60%); }
+  #s5:checked ~ .slides { transform: translateX(-80%); }
+        
   /* Wygląd strzałek / kropek na dole */
         .controls {
             position: absolute;
@@ -110,7 +111,8 @@
   #s1:checked ~ .controls .to-s1,
   #s2:checked ~ .controls .to-s2,
   #s3:checked ~ .controls .to-s3,
-  #s4:checked ~ .controls .to-s4 {
+  #s4:checked ~ .controls .to-s4
+  #s5:checked ~ .controls .to-s5{
     background: #2d54a7;
   }
 
@@ -121,7 +123,7 @@
 <body>
 
 <header>
-    <h1>DEPLOYMENT IN PROGRESS</h1>
+    <h1>DEPLOYED</h1>
    
 </header>
 
@@ -135,6 +137,7 @@
           <input type="radio" name="slider" id="s2">
           <input type="radio" name="slider" id="s3">
           <input type="radio" name="slider" id="s4">
+          <input type="radio" name="slider" id="s5">
           
         <div class="slides">
         <div class="slide s1">  <img src="image/G1.jpg" 
@@ -150,12 +153,17 @@
          alt="Nu Gundam" 
          style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;"></div>
           </div>
+            <div class="slide s5">  <img src="image/G5.jpg"
+         alt="Nu Gundam" 
+         style="width: 75%; max-width: 300px; border-radius: 8px; margin: 15px 0; border: 1px solid #30363d;"></div>
+          </div>
 
           <div class="controls">
             <label for="s1" class="to-s1"></label>
             <label for="s2" class="to-s2"></label>
             <label for="s3" class="to-s3"></label>
             <label for="s4" class="to-s4"></label>
+            <label for="s5" class="to-s5"></label>
  
           </div>
           </div>
@@ -163,8 +171,8 @@
             <p>Grade: Entry Grade | Status: <strong>Assemble</strong></p>
     
             <div style="background-color: #30363d; border-radius: 10px; height: 20px; width: 100%; margin-top: 10px;">
-            <div style="background-color: #238636; height: 100%; width: 80%; border-radius: 10px; text-align: center; font-size: 12px; color: white;">
-            80%
+            <div style="background-color: #238636; height: 100%; width: 100%; border-radius: 10px; text-align: center; font-size: 12px; color: white;">
+            100%
             </div>
             </div>
         
